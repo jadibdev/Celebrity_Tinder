@@ -1,4 +1,4 @@
-This project is a Tinder clone for celebrities being built with ReactJS & Google Firebase
+## This project is a Tinder clone for celebrities being built with ReactJS & Google Firebase
 
 ## Available Scripts
 
