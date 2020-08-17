@@ -1,8 +1,10 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import TinderCard from 'react-tinder-card'
+import database from './firebase'
 import './taylor_swift.jpeg'
 import './TinderCards.css'
+
 
 function TinderCards() {
                          /* 
@@ -59,7 +61,28 @@ const [people, setPeople] = useState([
     url:
       "https://www.biography.com/.image/t_share/MTQ3NjM5MTEzMTc5MjEwODI2/eminem_photo_by_dave_j_hogan_getty_images_entertainment_getty_187596325.jpg",
   },
+  {
+    name: "Donald Trump",
+    url:
+      "https://thehill.com/sites/default/files/styles/article_full/public/trumpdonald_080620getty_memo.jpg?itok=xI0H74KF",
+  }
 ]);
+/* // piece of code that runs when a condition is met
+useEffect(() => {
+    // this is where the code runs ...
+   const unsubscribe = database.collection('people').onSnapshot((snapshot) => {
+        setPeople(snapshot.docs.map((doc) => doc.data()));
+    })
+    // this will run ONCE when the component loads, and never again
+    // putting anything in the array will have the useEffect run
+    // whenever that changes
+
+    return () => {
+        // this is the clean up
+        unsubscribe()
+    }
+}, []) */
+
     return (
       <div>
         <div className="tinderCards__cardContainer">
